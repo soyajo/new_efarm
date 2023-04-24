@@ -50,7 +50,7 @@ public class MemberDept {
     // 순서
     private Integer mdSeq;
 
-    // 전회기 사용여부
+    // 전화기 사용여부
     private Integer mdIscall;
 
     // 수정 시간
