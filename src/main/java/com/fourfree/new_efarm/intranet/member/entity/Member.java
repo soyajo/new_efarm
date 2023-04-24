@@ -3,13 +3,21 @@ package com.fourfree.new_efarm.intranet.member.entity;
 
 
 import com.fourfree.new_efarm.common.Entity.BaseEntity;
+import com.fourfree.new_efarm.intranet.member_dept.entity.MemberDept;
+import com.fourfree.new_efarm.intranet.role.entity.Role;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "tb_member")
 public class Member extends BaseEntity {
 
@@ -147,7 +155,9 @@ public class Member extends BaseEntity {
     @Column(name = "mb_wtype")
     private MemberWorkType mbWtype;
 
-
+    public void setMbName(String mbName) {
+        this.mbName = mbName;
+    }
 
 
 

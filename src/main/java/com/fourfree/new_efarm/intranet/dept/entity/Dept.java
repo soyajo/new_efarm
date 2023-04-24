@@ -1,5 +1,6 @@
 package com.fourfree.new_efarm.intranet.dept.entity;
 
+import com.fourfree.new_efarm.intranet.member_dept.entity.MemberDept;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -65,5 +66,9 @@ public class Dept {
     // 경로-검색용 경로
     @Column(name = "dp_path")
     private String dpPath;
+
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "dpNo")
+    private MemberDept memberDept;
+
 
 }

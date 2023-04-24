@@ -1,6 +1,9 @@
 package com.fourfree.new_efarm.intranet.member_dept.entity;
 
+import com.fourfree.new_efarm.intranet.dept.entity.Dept;
+import com.fourfree.new_efarm.intranet.member.entity.Member;
 import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -8,6 +11,7 @@ import java.time.LocalDateTime;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
+@Getter
 @Table(name = "tb_member_dept")
 public class MemberDept {
     // pk
@@ -55,5 +59,13 @@ public class MemberDept {
 
     // 수정 시간
     private LocalDateTime mdUpdatedt;
+
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "dpNo")
+    private Dept dept;
+
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "mbNo")
+    private Member member;
+
 
 }

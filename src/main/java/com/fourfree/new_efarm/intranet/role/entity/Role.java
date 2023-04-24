@@ -1,5 +1,6 @@
 package com.fourfree.new_efarm.intranet.role.entity;
 
+import com.fourfree.new_efarm.intranet.member.entity.Member;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -26,6 +27,11 @@ public class Role {
 
     //
     private Integer roSeq;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "memberId")
+    private Member member;
 
 
 }
