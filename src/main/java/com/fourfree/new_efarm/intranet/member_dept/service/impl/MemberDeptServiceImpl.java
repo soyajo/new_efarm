@@ -18,7 +18,7 @@ public class MemberDeptServiceImpl implements MemberDeptService {
 
     @Override
     public Optional<MemberDept> selectOne(MemberDept memberDept) {
-        MemberDept findMemberDept = this.memberDeptRepository.findByMbid(memberDept.getMbId());
+        MemberDept findMemberDept = memberDeptRepository.findByMbId(memberDept.getMbId());
         return Optional.ofNullable(findMemberDept);
     }
 
