@@ -1,4 +1,4 @@
-package com.fourfree.new_efarm;
+package com.fourfree;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.boot.SpringApplication;

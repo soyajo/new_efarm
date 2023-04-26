@@ -27,4 +27,11 @@ intranet:
       username: root
       password:
 
+
+efarm:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    jdbc-url: jdbc:mariadb://localhost:3306/fourfree_farm
+    username: root
+    password:
 # ============================== db 연결 ===================================== #

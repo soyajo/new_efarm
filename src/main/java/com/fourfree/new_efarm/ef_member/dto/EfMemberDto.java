@@ -1,17 +1,15 @@
-package com.fourfree.intranet.member.dto;
+package com.fourfree.new_efarm.ef_member.dto;
+
 
 import com.fourfree.intranet.member.entity.Member;
 import com.fourfree.intranet.member.entity.MemberSex;
 import com.fourfree.intranet.member.entity.MemberWorkType;
-import lombok.*;
+import com.fourfree.new_efarm.ef_member.entity.EfMember;
+import lombok.Builder;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class MemberDto {
-
+public class EfMemberDto {
     // pk
     private Long mbNo;
 
@@ -117,48 +115,44 @@ public class MemberDto {
     // 재직기간
     private Integer mbDoday;
 
-    // work-type :: 근무 형태 :: FE-정직, SE-용역, CE-사업자
-    private MemberWorkType mbWtype;
-
-    // entity to dto
+    // Entity to Dto
     @Builder
-    public MemberDto(Member member) {
-        this.mbNo = member.getMbNo();
-        this.mbId = member.getMbId();
-        this.mbName = member.getMbName();
-        this.mbJumin = member.getMbJumin();
-        this.mbPasswd = member.getMbPasswd();
-        this.mbBirth = member.getMbBirth();
-        this.mbTel = member.getMbTel();
-        this.mbHp = member.getMbHp();
-        this.mbEmail = member.getMbEmail();
-        this.mbZip = member.getMbZip();
-        this.mbAddr1 = member.getMbAddr1();
-        this.mbAddr2 = member.getMbAddr2();
-        this.mbOldaddr1 = member.getMbOldaddr1();
-        this.mbOldaddr2 = member.getMbOldaddr2();
-        this.mbImage = member.getMbImage();
-        this.mbRegdate = member.getMbRegdate();
-        this.mbAuthMobile = member.getMbAuthMobile();
-        this.mbUse = member.getMbUse();
-        this.mbPasswdInit = member.getMbPasswdInit();
-        this.mbUdtDate = member.getMbUdtDate();
-        this.mbUtdId = member.getMbUtdId();
-        this.mbLastloginDate = member.getMbLastloginDate();
-        this.mbStatus = member.getMbStatus();
-        this.mbRegId = member.getMbRegId();
-        this.mbRegStatus = member.getMbRegStatus();
-        this.mbReqDate = member.getMbReqDate();
-        this.mbIdate = member.getMbIdate();
-        this.mbTdate = member.getMbTdate();
-        this.mbPasswdLimitdate = member.getMbPasswdLimitdate();
-        this.mbProcDate = member.getMbProcDate();
-        this.mbIsdel = member.getMbIsdel();
-        this.pIntraNum = member.getPIntraNum();
-        this.mbSex = member.getMbSex();
-        this.mbAge = member.getMbAge();
-        this.mbDoday = member.getMbDoday();
-        this.mbWtype = member.getMbWtype();
+    public EfMemberDto(EfMember efMember) {
+        this.mbNo = efMember.getMbNo();
+        this.mbId = efMember.getMbId();
+        this.mbName = efMember.getMbName();
+        this.mbJumin = efMember.getMbJumin();
+        this.mbPasswd = efMember.getMbPasswd();
+        this.mbBirth = efMember.getMbBirth();
+        this.mbTel = efMember.getMbTel();
+        this.mbHp = efMember.getMbHp();
+        this.mbEmail = efMember.getMbEmail();
+        this.mbZip = efMember.getMbZip();
+        this.mbAddr1 = efMember.getMbAddr1();
+        this.mbAddr2 = efMember.getMbAddr2();
+        this.mbOldaddr1 = efMember.getMbOldaddr1();
+        this.mbOldaddr2 = efMember.getMbOldaddr2();
+        this.mbImage = efMember.getMbImage();
+        this.mbRegdate = efMember.getMbRegdate();
+        this.mbAuthMobile = efMember.getMbAuthMobile();
+        this.mbUse = efMember.getMbUse();
+        this.mbPasswdInit = efMember.getMbPasswdInit();
+        this.mbUdtDate = efMember.getMbUdtDate();
+        this.mbUtdId = efMember.getMbUtdId();
+        this.mbLastloginDate = efMember.getMbLastloginDate();
+        this.mbStatus = efMember.getMbStatus();
+        this.mbRegId = efMember.getMbRegId();
+        this.mbRegStatus = efMember.getMbRegStatus();
+        this.mbReqDate = efMember.getMbReqDate();
+        this.mbIdate = efMember.getMbIdate();
+        this.mbTdate = efMember.getMbTdate();
+        this.mbPasswdLimitdate = efMember.getMbPasswdLimitdate();
+        this.mbProcDate = efMember.getMbProcDate();
+        this.mbIsdel = efMember.getMbIsdel();
+        this.pIntraNum = efMember.getPIntraNum();
+        this.mbSex = efMember.getMbSex();
+        this.mbAge = efMember.getMbAge();
+        this.mbDoday = efMember.getMbDoday();
     }
 
     // Dto to Entity
@@ -199,11 +193,6 @@ public class MemberDto {
                 .mbSex(mbSex)
                 .mbAge(mbAge)
                 .mbDoday(mbDoday)
-                .mbWtype(mbWtype)
                 .build();
     }
-
-
-    // Long mbNo, String mbId, String mbName, String mbJumin, String mbPasswd, String mbBirth, String mbTel, String mbHp, String mbEmail, String mbZip, String mbAddr1, String mbAddr2, String mbOldaddr1, String mbOldaddr2, String mbImage, LocalDateTime mbRegdate, Integer mbAuthMobile,
-    //                  Integer mbUse, Integer mbPasswdInit, LocalDateTime mbUdtDate, String mbUtdId, LocalDateTime mbLastloginDate, Integer mbStatus, String mbRegId, Integer mbRegStatus, LocalDateTime mbReqDate, String mbIdate, String mbTdate, String mbPasswdLimitdate, LocalDateTime mbProcDate, Integer mbIsdel, String pIntraNum, MemberSex mbSex, Integer mbAge, Integer mbDoday, MemberWorkType mbWtype
 }

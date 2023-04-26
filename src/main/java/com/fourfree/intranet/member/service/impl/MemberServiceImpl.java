@@ -24,7 +24,11 @@ public class MemberServiceImpl implements MemberService {
         List<Member> members = memberRepository.findAll();
 
         List<MemberDto> MemberDtos = members.stream()
-                .map(m -> new MemberDto(m.getMbId(), m.getMbName()))
+                .map(
+                        m -> MemberDto.builder()
+                                .member(m)
+                                .build()
+                )
                 .collect(Collectors.toList());
 
         return MemberDtos;
@@ -36,8 +40,7 @@ public class MemberServiceImpl implements MemberService {
         Member findMember = memberRepository.findByMbId(mbId);
 
         return MemberDto.builder()
-                .mbId(findMember.getMbId())
-                .mbName(findMember.getMbName())
+                .member(findMember)
                 .build();
     }
 }

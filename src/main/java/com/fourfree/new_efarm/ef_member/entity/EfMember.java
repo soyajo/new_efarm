@@ -1,22 +1,20 @@
-package com.fourfree.intranet.member.entity;
+package com.fourfree.new_efarm.ef_member.entity;
 
-
-
-import lombok.*;
+import com.fourfree.intranet.member.entity.MemberSex;
+import com.fourfree.intranet.member.entity.MemberWorkType;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-/**
- * 직원 테이블
- */
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "tb_member")
-public class Member {
-
-    // pk
+public class EfMember {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "mb_no")
@@ -159,49 +157,44 @@ public class Member {
     @Column(name = "mb_doday")
     private Integer mbDoday;
 
-    // work-type :: 근무 형태 :: FE-정직, SE-용역, CE-사업자
-    @Enumerated(EnumType.STRING)
-    @Column(name = "mb_wtype")
-    private MemberWorkType mbWtype;
 
     @Builder
-    public Member(Long mbNo, String mbId, String mbName, String mbJumin, String mbPasswd, String mbBirth, String mbTel, String mbHp, String mbEmail, String mbZip, String mbAddr1, String mbAddr2, String mbOldaddr1, String mbOldaddr2, String mbImage, LocalDateTime mbRegdate, Integer mbAuthMobile,
-                  Integer mbUse, Integer mbPasswdInit, LocalDateTime mbUdtDate, String mbUtdId, LocalDateTime mbLastloginDate, Integer mbStatus, String mbRegId, Integer mbRegStatus, LocalDateTime mbReqDate, String mbIdate, String mbTdate, String mbPasswdLimitdate, LocalDateTime mbProcDate, Integer mbIsdel, String pIntraNum, MemberSex mbSex, Integer mbAge, Integer mbDoday, MemberWorkType mbWtype) {
+    public EfMember(Long mbNo, String mbId, String mbName, String mbJumin, String mbPasswd, String mbBirth, String mbTel, String mbHp, String mbEmail, String mbZip, String mbAddr1, String mbAddr2, String mbOldaddr1, String mbOldaddr2, String mbImage, LocalDateTime mbRegdate, Integer mbAuthMobile,
+                  Integer mbUse, Integer mbPasswdInit, LocalDateTime mbUdtDate, String mbUtdId, LocalDateTime mbLastloginDate, Integer mbStatus, String mbRegId, Integer mbRegStatus, LocalDateTime mbReqDate, String mbIdate, String mbTdate, String mbPasswdLimitdate, LocalDateTime mbProcDate, Integer mbIsdel, String pIntraNum, MemberSex mbSex, Integer mbAge, Integer mbDoday) {
         this.mbNo = mbNo;
-            this.mbId = mbId;
-            this.mbName = mbName;
-            this.mbJumin = mbJumin;
-            this.mbPasswd = mbPasswd;
-            this.mbBirth = mbBirth;
-            this.mbTel = mbTel;
-            this.mbHp = mbHp;
-            this.mbEmail = mbEmail;
-            this.mbZip = mbZip;
-            this.mbAddr1 = mbAddr1;
-            this.mbAddr2 = mbAddr2;
-            this.mbOldaddr1 = mbOldaddr1;
-            this.mbOldaddr2 = mbOldaddr2;
-            this.mbImage = mbImage;
-            this.mbRegdate = mbRegdate;
-            this.mbAuthMobile = mbAuthMobile;
-            this.mbUse = mbUse;
-            this.mbPasswdInit = mbPasswdInit;
-            this.mbUdtDate = mbUdtDate;
-            this.mbUtdId = mbUtdId;
-            this.mbLastloginDate = mbLastloginDate;
-            this.mbStatus = mbStatus;
-            this.mbRegId = mbRegId;
-            this.mbRegStatus = mbRegStatus;
-            this.mbReqDate = mbReqDate;
-            this.mbIdate = mbIdate;
-            this.mbTdate = mbTdate;
-            this.mbPasswdLimitdate = mbPasswdLimitdate;
-            this.mbProcDate = mbProcDate;
-            this.mbIsdel = mbIsdel;
-            this.pIntraNum = pIntraNum;
-            this.mbSex = mbSex;
-            this.mbAge = mbAge;
-            this.mbDoday = mbDoday;
-            this.mbWtype = mbWtype;
+        this.mbId = mbId;
+        this.mbName = mbName;
+        this.mbJumin = mbJumin;
+        this.mbPasswd = mbPasswd;
+        this.mbBirth = mbBirth;
+        this.mbTel = mbTel;
+        this.mbHp = mbHp;
+        this.mbEmail = mbEmail;
+        this.mbZip = mbZip;
+        this.mbAddr1 = mbAddr1;
+        this.mbAddr2 = mbAddr2;
+        this.mbOldaddr1 = mbOldaddr1;
+        this.mbOldaddr2 = mbOldaddr2;
+        this.mbImage = mbImage;
+        this.mbRegdate = mbRegdate;
+        this.mbAuthMobile = mbAuthMobile;
+        this.mbUse = mbUse;
+        this.mbPasswdInit = mbPasswdInit;
+        this.mbUdtDate = mbUdtDate;
+        this.mbUtdId = mbUtdId;
+        this.mbLastloginDate = mbLastloginDate;
+        this.mbStatus = mbStatus;
+        this.mbRegId = mbRegId;
+        this.mbRegStatus = mbRegStatus;
+        this.mbReqDate = mbReqDate;
+        this.mbIdate = mbIdate;
+        this.mbTdate = mbTdate;
+        this.mbPasswdLimitdate = mbPasswdLimitdate;
+        this.mbProcDate = mbProcDate;
+        this.mbIsdel = mbIsdel;
+        this.pIntraNum = pIntraNum;
+        this.mbSex = mbSex;
+        this.mbAge = mbAge;
+        this.mbDoday = mbDoday;
     }
 }
