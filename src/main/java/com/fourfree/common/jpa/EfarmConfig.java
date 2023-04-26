@@ -42,6 +42,4 @@ public class EfarmConfig {
         transactionManager.setEntityManagerFactory(efarmEntityManager().getObject());
         return transactionManager;
     }
-
-
 }

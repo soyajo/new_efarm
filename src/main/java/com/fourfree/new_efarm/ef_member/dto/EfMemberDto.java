@@ -4,11 +4,14 @@ package com.fourfree.new_efarm.ef_member.dto;
 import com.fourfree.intranet.member.entity.Member;
 import com.fourfree.intranet.member.entity.MemberSex;
 import com.fourfree.new_efarm.ef_member.entity.EfMember;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class EfMemberDto {
     // pk
     private Long mbNo;

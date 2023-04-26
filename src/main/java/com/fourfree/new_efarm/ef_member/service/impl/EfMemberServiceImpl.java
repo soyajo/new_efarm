@@ -12,14 +12,5 @@ import java.util.List;
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class EfMemberServiceImpl implements EfMemberService {
-    @Override
-    public List<EfMemberDto> selectAll() {
 
-        return null;
-    }
-
-    @Override
-    public EfMemberDto selectOne() {
-        return null;
-    }
 }
