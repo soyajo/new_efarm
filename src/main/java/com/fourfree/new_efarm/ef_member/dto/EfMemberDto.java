@@ -3,12 +3,12 @@ package com.fourfree.new_efarm.ef_member.dto;
 
 import com.fourfree.intranet.member.entity.Member;
 import com.fourfree.intranet.member.entity.MemberSex;
-import com.fourfree.intranet.member.entity.MemberWorkType;
 import com.fourfree.new_efarm.ef_member.entity.EfMember;
 import lombok.Builder;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
-
+@Getter
 public class EfMemberDto {
     // pk
     private Long mbNo;

@@ -20,27 +20,19 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public List<MemberDto> selectAll() {
-
-        List<Member> members = memberRepository.findAll();
-
-        List<MemberDto> MemberDtos = members.stream()
+        return memberRepository.findAll().stream()
                 .map(
                         m -> MemberDto.builder()
                                 .member(m)
                                 .build()
                 )
                 .collect(Collectors.toList());
-
-        return MemberDtos;
     }
 
     @Override
     public MemberDto selectOneMbId(String mbId) {
-
-        Member findMember = memberRepository.findByMbId(mbId);
-
         return MemberDto.builder()
-                .member(findMember)
+                .member(memberRepository.findByMbId(mbId))
                 .build();
     }
 }
