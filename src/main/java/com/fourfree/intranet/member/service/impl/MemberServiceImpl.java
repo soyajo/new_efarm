@@ -1,5 +1,6 @@
 package com.fourfree.intranet.member.service.impl;
 
+import com.fourfree.intranet.member.dto.MemberDto;
 import com.fourfree.intranet.member.service.MemberService;
 import com.fourfree.intranet.member.entity.Member;
 import com.fourfree.intranet.member.repository.MemberRepository;
@@ -15,5 +16,28 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
 
+    private final MemberRepository memberRepository;
 
+    @Override
+    public List<MemberDto> selectAll() {
+
+        List<Member> members = memberRepository.findAll();
+
+        List<MemberDto> MemberDtos = members.stream()
+                .map(m -> new MemberDto(m.getMbId(), m.getMbName()))
+                .collect(Collectors.toList());
+
+        return MemberDtos;
+    }
+
+    @Override
+    public MemberDto selectOneMbId(String mbId) {
+
+        Member findMember = memberRepository.findByMbId(mbId);
+
+        return MemberDto.builder()
+                .mbId(findMember.getMbId())
+                .mbName(findMember.getMbName())
+                .build();
+    }
 }

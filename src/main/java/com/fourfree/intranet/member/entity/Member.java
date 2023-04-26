@@ -2,17 +2,17 @@ package com.fourfree.intranet.member.entity;
 
 
 
-import com.fourfree.common.Entity.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-import static org.springframework.util.StringUtils.hasText;
-
-@Entity
+/**
+ * 직원 테이블
+ */
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
 @Table(name = "tb_member")
 public class Member {
 
@@ -90,6 +90,18 @@ public class Member {
     @Column(name = "mb_use")
     private Integer mbUse;
 
+    // 비밀번호 초기화 여부
+    @Column(name = "mb_passwd_init")
+    private Integer mbPasswdInit;
+
+    // 마지막 수정일
+    @Column(name = "mb_udt_date")
+    private LocalDateTime mbUdtDate;
+
+    // 마지막 수정자
+    @Column(name = "mb_udt_id")
+    private String mbUtdId;
+
     // 마지막 로그인일자
     @Column(name = "mb_lastlogin_date")
     private LocalDateTime mbLastloginDate;
@@ -119,8 +131,8 @@ public class Member {
     private String mbTdate;
 
     // 비밀번호 만료일
-//    @Column(name = "mb_passwd_limi")
-//    private String mbPasswdLimi;
+    @Column(name = "mb_passwd_limitdate")
+    private String mbPasswdLimitdate;
 
     // 직원 등록일
     @Column(name = "mb_proc_date")
@@ -152,40 +164,12 @@ public class Member {
     @Column(name = "mb_wtype")
     private MemberWorkType mbWtype;
 
-//    @Builder
-//    public Member(String mbId, String mbName, String mbJumin, String mbPasswd, String mbBirth,String mbTel, String mbHp, String mbEmail, String mbZip, String mbAddr1, String mbAddr2, String mbOldaddr1, String mbOldaddr2,String mbImage, LocalDateTime mbRegdate, Integer mb_AuthMobile, Integer mbUse, LocalDateTime mbLastloginDate, Integer mbStatus, String mbRegId, Integer mbRegStatus, LocalDateTime mbReqDate, String mbIdate, String mbTdate, String mbPasswdLimi, LocalDateTime mbProcDate, Integer mbIsdel, String pIntraNum, MemberSex mbSex, Integer mbAge, Integer mbDoday, MemberWorkType mbWtype) {
-//        this.mbId = mbId;
-//        this.mbName = mbName;
-//        this.mbJumin = mbJumin;
-//        this.mbPasswd = mbPasswd;
-//        this.mbBirth = mbBirth;
-//        this.mbTel = mbTel;
-//        this.mbHp = mbHp;
-//        this.mbEmail = mbEmail;
-//        this.mbZip = mbZip;
-//        this.mbAddr1 = mbAddr1;
-//        this.mbAddr2 = mbAddr2;
-//        this.mbOldaddr1 = mbOldaddr1;
-//        this.mbOldaddr2 = mbOldaddr2;
-//        this.mbImage = mbImage;
-//        this.mbRegdate = mbRegdate;
-//        this.mb_AuthMobile = mb_AuthMobile;
-//        this.mbUse = mbUse;
-//        this.mbLastloginDate = mbLastloginDate;
-//        this.mbStatus = mbStatus;
-//        this.mbRegId = mbRegId;
-//        this.mbRegStatus = mbRegStatus;
-//        this.mbReqDate = mbReqDate;
-//        this.mbIdate = mbIdate;
-//        this.mbTdate = mbTdate;
-//        this.mbPasswdLimi = mbPasswdLimi;
-//        this.mbProcDate = mbProcDate;
-//        this.mbIsdel = mbIsdel;
-//        this.pIntraNum = pIntraNum;
-//        this.mbSex = mbSex;
-//        this.mbAge = mbAge;
-//        this.mbDoday = mbDoday;
-//        this.mbWtype = mbWtype;
-//    }
+    @Builder
+    public Member(String mbId, String mbName) {
+        this.mbId = mbId;
+        this.mbName = mbName;
+    }
+
+
 
 }
