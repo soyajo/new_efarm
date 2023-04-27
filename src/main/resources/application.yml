@@ -15,8 +15,8 @@ server:
         use_sql_comments: true
 
 logging.level:
-  #  org.hibernate.SQL: debug
-  org.hibernate.type: trace
+  org.hibernate.SQL: debug
+#  org.hibernate.type: trace
 
 
 # ============================== db 연결 ===================================== #
