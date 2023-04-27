@@ -34,7 +34,6 @@ class EfMemberRoleRepositoryTest {
 
     @Test
     void 전체조회_mbId() {
-
         List<String> efMemberRoleDtos = efMemberRoleRepository.findAllByMbId("chochanho").stream()
                 .map(
                         m -> EfMemberRoleDto.builder()
