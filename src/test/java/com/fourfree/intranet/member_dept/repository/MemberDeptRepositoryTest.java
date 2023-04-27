@@ -1,8 +1,8 @@
-package com.fourfree.intranet.memberDept.repository;
+package com.fourfree.intranet.member_dept.repository;
 
-import com.fourfree.intranet.memberDept.dto.MemberDeptEntityDto;
-import com.fourfree.intranet.memberDept.dto.MemberDeptDto;
-import com.fourfree.intranet.memberDept.entity.MemberDept;
+import com.fourfree.intranet.member_dept.dto.MemberDeptEntityDto;
+import com.fourfree.intranet.member_dept.dto.MemberDeptDto;
+import com.fourfree.intranet.member_dept.entity.MemberDept;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

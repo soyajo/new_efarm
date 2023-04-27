@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface MemberService {
 
+    MemberDto selectOneMbId(String mbId);
 }

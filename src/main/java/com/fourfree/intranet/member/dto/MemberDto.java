@@ -1,12 +1,17 @@
 package com.fourfree.intranet.member.dto;
 
+import com.fourfree.intranet.dept.dto.DeptDto;
 import com.fourfree.intranet.member.entity.Member;
 import com.fourfree.intranet.member.entity.MemberSex;
 import com.fourfree.intranet.member.entity.MemberWorkType;
+import com.fourfree.intranet.member_dept.dto.MemberDeptDto;
+import com.fourfree.intranet.member_dept.dto.MemberDeptJoinDeptDto;
+import com.fourfree.intranet.member_role.dto.MemberRoleDto;
 import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -119,6 +124,27 @@ public class MemberDto {
 
     // work-type :: 근무 형태 :: FE-정직, SE-용역, CE-사업자
     private MemberWorkType mbWtype;
+
+    private DeptDto dept;
+    private List<String> roles;
+    private List<String> farm_roles;
+    private MemberDeptJoinDeptDto memberDeptJoinDeptDto;
+
+    public void setDept(DeptDto dept) {
+        this.dept = dept;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
+    public void setFarm_roles(List<String> farm_roles) {
+        this.farm_roles = farm_roles;
+    }
+
+    public void setMemberDeptJoinDeptDto(MemberDeptJoinDeptDto memberDeptJoinDeptDto) {
+        this.memberDeptJoinDeptDto = memberDeptJoinDeptDto;
+    }
 
     // entity to dto
     @Builder

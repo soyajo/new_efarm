@@ -1,4 +1,4 @@
-package com.fourfree.intranet.memberDept.entity;
+package com.fourfree.intranet.member_dept.entity;
 
 import com.fourfree.intranet.dept.entity.Dept;
 import com.fourfree.intranet.member.entity.Member;

@@ -37,7 +37,7 @@ class MemberRepositoryTest {
     @Test
     public void 단일조회() {
         MemberDto memberDto = MemberDto.builder()
-                .member(memberRepository.findByMbId("thdi4564"))
+                .member(memberRepository.findByMbId("thdi4564").get())
                 .build();
 
         assertThat(memberDto.getMbName()).isEqualTo("조소야");

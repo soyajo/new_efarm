@@ -39,7 +39,7 @@ class EfMemberRepositoryTest {
     @Test
     public void 단일조회() {
         EfMemberDto efMemberDto = EfMemberDto.builder()
-                .efMember(efMemberRepository.findByMbId("thdi4564"))
+                .efMember(efMemberRepository.findByMbId("thdi4564").get())
                 .build();
 
         assertThat(efMemberDto.getMbName()).isEqualTo("조소야");

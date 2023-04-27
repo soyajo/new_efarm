@@ -1,8 +1,8 @@
-package com.fourfree.intranet.memberDept.dto;
+package com.fourfree.intranet.member_dept.dto;
 
 import com.fourfree.intranet.dept.entity.Dept;
 import com.fourfree.intranet.member.entity.Member;
-import com.fourfree.intranet.memberDept.entity.MemberDept;
+import com.fourfree.intranet.member_dept.entity.MemberDept;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
