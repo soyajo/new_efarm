@@ -25,7 +25,6 @@ configurations {
 repositories {
     mavenCentral()
 }
-
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -39,13 +38,13 @@ dependencies {
     implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
 
     // log4jdbc-remix 추가
-    implementation group: 'org.lazyluke', name: 'log4jdbc-remix', version: '0.2.7'
+//    implementation group: 'org.lazyluke', name: 'log4jdbc-remix', version: '0.2.7'
 
     // Spring Security 추가
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
     // 쿼리 파라미터 보기
-	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8'
+    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8'
 
     // redis
     implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.6.7'
@@ -65,6 +64,7 @@ dependencies {
         exclude group: "org.hamcrest", module: "hamcrest-core"
     }
 }
+
 
 test {
     useJUnitPlatform()

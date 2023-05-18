@@ -1,6 +1,10 @@
 \server:
   port: 80
 
+# 테스트
+test:
+  name: josoya
+
 spring:
   jpa:
     hibernate:

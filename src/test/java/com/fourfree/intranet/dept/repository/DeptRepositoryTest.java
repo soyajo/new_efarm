@@ -4,6 +4,7 @@ import com.fourfree.intranet.dept.dto.DeptDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +20,12 @@ class DeptRepositoryTest {
     @Autowired
     DeptRepository deptRepository;
 
+    @Value("${test.name}")
+    private String name;
+
+    @Value("${test.age}")
+    private int age;
+
     @Test
     void 전체조회() {
         List<DeptDto> deptDtos = deptRepository.findAll().stream()
@@ -28,7 +35,8 @@ class DeptRepositoryTest {
                                 .build()
                 )
                 .collect(Collectors.toList());
-
+        System.out.println("#### name : " +  name);
+        System.out.println("#### age : " + age);
         Assertions.assertEquals(deptDtos.size(),168);
     }
 }

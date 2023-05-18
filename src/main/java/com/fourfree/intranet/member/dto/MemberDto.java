@@ -1,5 +1,7 @@
 package com.fourfree.intranet.member.dto;
 
+
+import com.fourfree.common.dto.BaseDto;
 import com.fourfree.intranet.dept.dto.DeptDto;
 import com.fourfree.intranet.member.entity.Member;
 import com.fourfree.intranet.member.entity.MemberSex;
@@ -15,7 +17,7 @@ import java.util.List;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class MemberDto {
+public class MemberDto extends BaseDto {
 
     // pk
     private Long mbNo;

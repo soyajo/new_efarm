@@ -35,9 +35,11 @@ public class MemberServiceImpl implements MemberService {
                         .mbId(mbId)
                         .build()
         ));
-        memberDto.setRoles(memberRoleService.selectAllMbId(mbId).stream()
+
+        memberDto.getTemp().put("MemberRoleDtos", memberRoleService.selectAllMbId(mbId).stream()
                 .map(MemberRoleDto::getRoId)
                 .collect(Collectors.toList()));
+
 
         return memberDto;
     }
