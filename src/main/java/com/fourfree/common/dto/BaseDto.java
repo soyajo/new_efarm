@@ -9,9 +9,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor()
 @Getter
-public abstract class BaseDto {
+public class BaseDto {
 
     private Map<String, List<Object>> temp;
 }
