@@ -14,6 +14,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class DeptDto {
 
+
+
     private Long dpNo;  // pk
     private Long dpPno; // 상위 pk
     private String dpName;  // 부서명
